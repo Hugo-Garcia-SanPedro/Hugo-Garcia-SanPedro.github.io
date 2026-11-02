@@ -410,9 +410,11 @@ header {
 
 .newsletter-box {
   background: #181614;
-  padding: 22px;
+  padding: 16px;
   border-radius: 6px;
   border: 1px solid #332820;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .newsletter-box h6 {
