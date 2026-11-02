@@ -32,7 +32,7 @@ header {
   font-size: 28px;
   font-weight: 900;
   /* CORRECCIÓN (WCAG 1.4.3): Tono de rojo más claro para cumplir con el contraste sobre fondo negro */
-  color: #ff4d4d;
+  color: #ff6b6b;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
@@ -167,14 +167,16 @@ header {
 
 .hero-subtitle {
   margin: 4px 0 16px 0;
-  /* CORRECCIÓN (WCAG 1.4.3): Se ajusta el rojo a un tono brillante (#ff4d4d) de mayor visibilidad */
-  color: #ff4d4d;
+  /* CORRECCIÓN (WCAG 1.4.3): Se ajusta el rojo a un tono brillante de mayor visibilidad */
+  color: #ff6b6b;
   font-size: 14px;
   font-weight: 600;
 }
 
 .search-box {
   display: flex;
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen y no desaparezcan en resoluciones pequeñas */
+  flex-wrap: wrap;
   gap: 10px;
   max-width: 900px;
 }
@@ -193,8 +195,12 @@ header {
   color: #cccccc;
 }
 
-.search-box input:first-child { flex: 3; }
-.search-box input:nth-child(2) { flex: 1; }
+/* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen y no desaparezcan en resoluciones pequeñas */
+.search-box input:first-child,
+.search-box input:nth-child(2),
+.btn-search {
+  flex: 1 1 100%;
+}
 
 .btn-search {
   background-color: #e50914;
@@ -239,7 +245,8 @@ header {
 
 .results-count {
   font-size: 13px;
-  color: #8c8c8c;
+  /* CORRECCIÓN (WCAG 1.4.3): Se ajusta el gris sobre fondo negro para mejor visibilidad */
+  color: #b3b3b3;
 }
 
 /* Botón de descarga de PDF */
@@ -454,7 +461,8 @@ header {
 .sidebar-block h3 {
   margin: 0 0 12px 0;
   font-size: 15px;
-  color: #e50914;
+  /* CORRECCIÓN (WCAG 1.4.3): Se ajusta el rojo a un tono brillante de mayor visibilidad */
+  color: #ff6b6b;
   border-bottom: 2px solid #e50914;
   padding-bottom: 5px;
   text-transform: uppercase;
@@ -499,7 +507,8 @@ header {
 
 footer {
   background: #080808;
-  color: #777;
+  /* CORRECCIÓN (WCAG 1.4.3): Se ajusta el gris sobre fondo negro para mejor visibilidad */
+  color: #b3b3b3;
   padding: 40px 0 70px 0; /* Aumentamos el padding inferior a 70px */
   margin-top: 50px;
   font-size: 12px;
