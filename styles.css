@@ -175,7 +175,7 @@ header {
 
 .search-box {
   display: flex;
-  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen y no desaparezcan en resoluciones pequeñas */
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen en resoluciones pequeñas */
   flex-wrap: wrap;
   gap: 10px;
   max-width: 900px;
@@ -195,7 +195,7 @@ header {
   color: #cccccc;
 }
 
-/* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen y no desaparezcan en resoluciones pequeñas */
+/* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs y botones se desplacen en resoluciones pequeñas */
 .search-box input:first-child,
 .search-box input:nth-child(2),
 .btn-search {
@@ -401,15 +401,26 @@ header {
 /* BLOQUE INFERIOR DE FORMULARIO Y FILTROS */
 .mosaic-footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
   margin-top: 45px;
   border-top: 1px solid #222;
   padding-top: 30px;
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que el formulario se ajuste a resoluciones pequeñas */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* CORRECCIÓN (WCAG 1.4.10): Permitir que el formulario se ajuste a resoluciones pequeñas */
+@media (min-width: 768px) {
+  .mosaic-footer-grid {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .newsletter-box {
   background: #181614;
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que el formulario se ajuste a resoluciones pequeñas */
   padding: 16px;
   border-radius: 6px;
   border: 1px solid #332820;
@@ -431,13 +442,18 @@ header {
 
 .required-mark { color: #ff4d4d; font-weight: bold; }
 
-.form-group { margin-bottom: 12px; }
+.form-group { 
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los formularios se desplacen en resoluciones pequeñas */
+  margin-bottom: 12px; 
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
 .form-group input {
-  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs se desplacen y no desaparezcan en resoluciones pequeñas */
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs se desplacen en resoluciones pequeñas */
   box-sizing: border-box;
   width: 100%;
-  width: 95%;
   padding: 8px 12px;
   background-color: #101010;
   border: 1px solid #444;
