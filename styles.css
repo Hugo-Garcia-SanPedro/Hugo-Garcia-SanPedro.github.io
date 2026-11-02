@@ -432,6 +432,9 @@ header {
 .form-group { margin-bottom: 12px; }
 
 .form-group input {
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que los inputs se desplacen y no desaparezcan en resoluciones pequeñas */
+  box-sizing: border-box;
+  width: 100%;
   width: 95%;
   padding: 8px 12px;
   background-color: #101010;
@@ -444,6 +447,12 @@ header {
   margin-bottom: 15px;
   font-size: 12px;
   color: #ccc;
+  /* CORRECCIÓN (WCAG 1.4.10): Permitir que el checkbox se ajuste al tamaño de la resolución sin perder visibilidad */
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .custom-btn {
